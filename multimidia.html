@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimídia — Isabela de Sena Alves</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Isabela de Sena Alves</h1>
+    <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Navegação principal">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="formulario.html">Contato</a></li>
+      <li><a href="multimidia.html" aria-current="page">Multimídia</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+      <li><button type="button" id="btn-tema" class="secundario" aria-pressed="false">🌙 Tema escuro</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="video">
+      <h2>Vídeo de apresentação</h2>
+      <article>
+        <p>Confira meu vídeo de apresentação:</p>
+        <figure>
+          <video controls preload="metadata">
+            <source src="media/video.mp4" type="video/mp4">
+            Seu navegador não suporta a reprodução de vídeo.
+          </video>
+          <figcaption>Vídeo de exemplo — arquivo local em media/video.mp4.</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section id="audio">
+      <h2>Áudio de apresentação</h2>
+      <article>
+        <p>Ouça minha apresentação:</p>
+        <figure>
+          <audio controls preload="metadata">
+            <source src="media/audio.mp3" type="audio/mpeg">
+            Seu navegador não suporta a reprodução de áudio.
+          </audio>
+          <figcaption>Áudio de exemplo — arquivo local em media/audio.mp3.</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section id="mapa">
+      <h2>Localização</h2>
+      <article>
+        <p>Mapa de Mogi das Cruzes, SP, incorporado com <code>&lt;iframe&gt;</code>:</p>
+        <figure>
+          <iframe
+            title="Mapa de Mogi das Cruzes, SP"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-46.25%2C-23.55%2C-46.15%2C-23.48&amp;layer=mapnik"
+            loading="lazy">
+          </iframe>
+          <figcaption>Mapa incorporado do OpenStreetMap.</figcaption>
+        </figure>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por Isabela de Sena Alves</p>
+    <p>Mogi das Cruzes, SP — 2026</p>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
+
+</body>
+</html>
