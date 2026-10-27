@@ -1,0 +1,446 @@
+/* =========================================================
+   Site pessoal — Isabela de Sena Alves
+   Um único arquivo de estilo para as 5 páginas
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --navy: #16324f;
+  --navy-dark: #0e2238;
+  --teal: #2f9e83;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --line: #dde3e8;
+  --text: #24313f;
+  --muted: #5b6b7a;
+
+  --heading-font: 'Poppins', Arial, sans-serif;
+  --body-font: 'Inter', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  line-height: 1.65;
+}
+
+a { color: var(--teal); }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- Cabeçalho + navegação (igual em todas as páginas) ---------- */
+
+.site-header {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 2.5rem 1.5rem 2rem;
+}
+
+.site-header h1 {
+  font-family: var(--heading-font);
+  margin: 0 0 0.4rem;
+  font-size: 2rem;
+}
+
+.site-header p {
+  margin: 0;
+  color: #cdd9e3;
+  font-size: 1rem;
+}
+
+nav.site-nav {
+  background: var(--navy-dark);
+  text-align: center;
+  padding: 0.9rem 1rem;
+}
+
+nav.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+nav.site-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+nav.site-nav a:hover { color: #9fd8c8; }
+
+nav.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--teal);
+  color: #9fd8c8;
+}
+
+/* ---------- Estrutura geral ---------- */
+
+main {
+  max-width: 820px;
+  margin: 2.2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.8rem;
+}
+
+h2 {
+  font-family: var(--heading-font);
+  color: var(--navy);
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-family: var(--heading-font);
+  color: var(--navy);
+}
+
+blockquote {
+  border-left: 3px solid var(--teal);
+  margin: 1.2rem 0;
+  padding: 0.4rem 0 0.4rem 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Hero da index ---------- */
+
+.hero {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 3px solid var(--teal);
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-list a {
+  display: inline-block;
+  border: 1px solid var(--line);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.social-list a:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ---------- Linha de dois cards lado a lado ---------- */
+
+.row-two {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .row-two { grid-template-columns: 1fr 1fr; }
+}
+
+.row-two > section { margin-bottom: 0; }
+
+/* ---------- Tabela ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+caption {
+  text-align: left;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+th { color: var(--navy); font-family: var(--heading-font); font-size: 0.95rem; }
+
+tfoot td { color: var(--muted); font-size: 0.85rem; font-style: italic; }
+
+/* ---------- Formulário ---------- */
+
+form { display: grid; gap: 1.2rem; }
+
+.form-row.two-up {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .form-row.two-up { grid-template-columns: 1fr 1fr; }
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: var(--navy);
+}
+
+input, select, textarea {
+  font: inherit;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+textarea { min-height: 130px; resize: vertical; }
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+}
+
+legend {
+  font-weight: 600;
+  color: var(--navy);
+  padding: 0 0.4rem;
+}
+
+.radio-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.radio-row input { width: auto; }
+
+button[type="submit"] {
+  justify-self: start;
+  background: var(--teal);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover { background: #268066; }
+
+/* ---------- Multimídia ---------- */
+
+video, audio, iframe { width: 100%; display: block; border: 0; border-radius: 8px; }
+
+iframe { height: 300px; margin-top: 0.5rem; }
+
+figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; }
+
+/* ---------- Gráficos ---------- */
+
+canvas {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.svg-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto 0;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.retangulo { fill: #2f9e83; }
+.circulo   { fill: #16324f; }
+.triangulo { fill: #d97757; }
+
+/* ---------- Rodapé ---------- */
+
+footer {
+  background: var(--navy);
+  color: #cdd9e3;
+  text-align: center;
+  padding: 1.6rem;
+  font-size: 0.9rem;
+}
+
+footer p { margin: 0.2rem 0; }
+
+@media (max-width: 600px) {
+  nav.site-nav ul { gap: 0.9rem; }
+  .site-header h1 { font-size: 1.6rem; }
+}
+
+
+/* =========================================================
+   CP2 — classes usadas pelas páginas e que faltavam
+   ========================================================= */
+
+.botoes { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button[type="submit"],
+button.secundario {
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+button.secundario {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+
+button.secundario:hover { background: var(--navy); color: white; }
+
+#btn-animar {
+  background: var(--teal);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+#btn-animar:hover { background: #268066; }
+
+/* Botão de tema dentro do menu */
+nav.site-nav button {
+  background: transparent;
+  color: white;
+  border: 1px solid #9fd8c8;
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+nav.site-nav button:hover { background: #9fd8c8; color: var(--navy-dark); }
+
+/* Gráfico SVG */
+.svg-rotulo { font: 600 16px var(--body-font); fill: var(--navy); }
+.svg-valor  { font: 700 16px var(--body-font); fill: var(--muted); text-anchor: end; }
+.svg-trilho { fill: var(--line); }
+
+/* =========================================================
+   CP3 — validação, feedback e mensagens salvas
+   ========================================================= */
+
+.erro-campo {
+  display: block;
+  margin-top: 0.25rem;
+  color: #b3261e;
+  font-size: 0.875rem;
+}
+
+input.invalido,
+select.invalido,
+textarea.invalido {
+  border: 2px solid #b3261e;
+}
+
+.feedback:empty { display: none; }
+
+.feedback {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.feedback.sucesso { background: #e3f4ec; color: #14532d; border: 1px solid #2f9e83; }
+.feedback.erro    { background: #fdecea; color: #7a1712; border: 1px solid #b3261e; }
+
+#lista-mensagens { list-style: none; padding: 0; }
+
+#lista-mensagens li {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+#lista-mensagens p { margin: 0.4rem 0 0.8rem; }
+
+#lista-mensagens button.secundario { padding: 0.3rem 1rem; font-size: 0.85rem; }
+
+/* =========================================================
+   CP3 — tema escuro (troca as variáveis de cor)
+   ========================================================= */
+
+[data-tema="escuro"] {
+  --bg: #12161c;
+  --surface: #1b222b;
+  --line: #33404f;
+  --text: #e6e9ee;
+  --muted: #9aa8b6;
+}
+
+[data-tema="escuro"] h2,
+[data-tema="escuro"] h3,
+[data-tema="escuro"] label,
+[data-tema="escuro"] legend,
+[data-tema="escuro"] th,
+[data-tema="escuro"] .svg-rotulo { color: #e6e9ee; fill: #e6e9ee; }
+
+[data-tema="escuro"] h2 { border-bottom-color: var(--teal); }
+
+[data-tema="escuro"] .social-list a { color: #e6e9ee; }
+
+[data-tema="escuro"] button.secundario { color: #e6e9ee; border-color: #e6e9ee; }
+
+[data-tema="escuro"] .erro-campo { color: #ff9b94; }
+
+[data-tema="escuro"] .feedback.sucesso { background: #12301f; color: #b9efd0; }
+[data-tema="escuro"] .feedback.erro    { background: #3a1513; color: #ffc9c4; }
