@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Isabela de Sena Alves</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Isabela de Sena Alves</h1>
+    <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Navegação principal">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="formulario.html" aria-current="page">Contato</a></li>
+      <li><a href="multimidia.html">Multimídia</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+      <li><button type="button" id="btn-tema" class="secundario" aria-pressed="false">🌙 Tema escuro</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="contato">
+      <h2>Fale comigo</h2>
+      <p>Preencha o formulário abaixo para entrar em contato. Campos marcados com * são obrigatórios.</p>
+
+      <article>
+        <form id="form-contato" action="#" method="post" novalidate>
+
+          <div class="form-row two-up">
+            <div>
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" required minlength="3" maxlength="80" autocomplete="name">
+            </div>
+            <div>
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-row two-up">
+            <div>
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999"
+                     pattern="\(?\d{2}\)?\s?9?\d{4}-?\d{4}" title="Use o formato (11) 99999-9999"
+                     autocomplete="tel">
+            </div>
+            <div>
+              <label for="site">Site ou LinkedIn</label>
+              <input type="url" id="site" name="site" placeholder="https://exemplo.com" autocomplete="url">
+            </div>
+          </div>
+
+          <div class="form-row two-up">
+            <div>
+              <label for="data">Data preferida para retorno</label>
+              <input type="date" id="data" name="data">
+            </div>
+            <div>
+              <label for="assunto">Assunto *</label>
+              <select id="assunto" name="assunto" required>
+                <option value="">Selecione…</option>
+                <option value="desenvolvimento">Desenvolvimento</option>
+                <option value="design">Design</option>
+                <option value="suporte">Suporte</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" required minlength="10" maxlength="500"></textarea>
+          </div>
+
+          <fieldset>
+            <legend>Prefiro ser contatada por</legend>
+            <div class="radio-row">
+              <input type="radio" id="pref-email" name="preferencia" value="email" checked>
+              <label for="pref-email">E-mail</label>
+            </div>
+            <div class="radio-row">
+              <input type="radio" id="pref-telefone" name="preferencia" value="telefone">
+              <label for="pref-telefone">Telefone</label>
+            </div>
+          </fieldset>
+
+          <div class="radio-row">
+            <input type="checkbox" id="aceite" name="aceite" required>
+            <label for="aceite">Concordo em ser contatada sobre esta mensagem *</label>
+          </div>
+
+          <div class="botoes">
+            <button type="submit">Enviar</button>
+            <button type="reset" class="secundario">Limpar</button>
+          </div>
+        </form>
+        <div id="feedback-form" role="status" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section id="mensagens-salvas">
+      <h2>Mensagens salvas neste navegador</h2>
+      <p>As mensagens enviadas ficam guardadas no seu navegador (localStorage) e continuam aqui mesmo depois de recarregar a página.</p>
+      <ul id="lista-mensagens"></ul>
+      <div class="botoes">
+        <button type="button" id="btn-limpar-mensagens" class="secundario">Apagar todas</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por Isabela de Sena Alves</p>
+    <p>Mogi das Cruzes, SP — 2026</p>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
+
+</body>
+</html>

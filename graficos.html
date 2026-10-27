@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráficos — Isabela de Sena Alves</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Isabela de Sena Alves</h1>
+    <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Navegação principal">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="formulario.html">Contato</a></li>
+      <li><a href="multimidia.html">Multimídia</a></li>
+      <li><a href="graficos.html" aria-current="page">Gráficos</a></li>
+      <li><button type="button" id="btn-tema" class="secundario" aria-pressed="false">🌙 Tema escuro</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="canvas">
+      <h2>Gráfico usando Canvas</h2>
+      <article>
+        <p>Nível atual nas tecnologias do currículo (escala de 0 a 5), desenhado com a API 2D do Canvas.</p>
+        <canvas id="grafico-canvas" width="600" height="300">
+          Seu navegador não suporta Canvas. Níveis: HTML5 3, CSS3 2, JavaScript 2 (de 0 a 5).
+        </canvas>
+        <div class="botoes">
+          <button type="button" id="btn-animar">Animar novamente</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="svg">
+      <h2>Gráfico usando SVG</h2>
+      <article>
+        <p>Os mesmos dados em formas vetoriais estilizadas com CSS.</p>
+        <div class="svg-container">
+          <svg viewBox="0 0 600 220" role="img" aria-labelledby="svg-titulo svg-desc">
+            <title id="svg-titulo">Nível nas tecnologias</title>
+            <desc id="svg-desc">Barras horizontais: HTML5 nível 3, CSS3 nível 2 e JavaScript nível 2, de 0 a 5.</desc>
+            <defs>
+              <linearGradient id="grad-html" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#2f9e83"></stop>
+                <stop offset="1" stop-color="#7cd1ba"></stop>
+              </linearGradient>
+              <linearGradient id="grad-css" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#16324f"></stop>
+                <stop offset="1" stop-color="#3d6b98"></stop>
+              </linearGradient>
+              <linearGradient id="grad-js" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#d97757"></stop>
+                <stop offset="1" stop-color="#f0a98f"></stop>
+              </linearGradient>
+            </defs>
+
+            <text class="svg-rotulo" x="20" y="55">HTML5</text>
+            <rect class="svg-trilho" x="130" y="35" width="400" height="28" rx="14"></rect>
+            <rect class="svg-barra" x="130" y="35" width="240" height="28" rx="14" fill="url(#grad-html)"></rect>
+            <text class="svg-valor" x="580" y="55">3</text>
+
+            <text class="svg-rotulo" x="20" y="110">CSS3</text>
+            <rect class="svg-trilho" x="130" y="90" width="400" height="28" rx="14"></rect>
+            <rect class="svg-barra" x="130" y="90" width="160" height="28" rx="14" fill="url(#grad-css)"></rect>
+            <text class="svg-valor" x="580" y="110">2</text>
+
+            <text class="svg-rotulo" x="20" y="165">JavaScript</text>
+            <rect class="svg-trilho" x="130" y="145" width="400" height="28" rx="14"></rect>
+            <rect class="svg-barra" x="130" y="145" width="160" height="28" rx="14" fill="url(#grad-js)"></rect>
+            <text class="svg-valor" x="580" y="165">2</text>
+          </svg>
+        </div>
+      </article>
+    </section>
+
+    <section id="comparacao">
+      <h2>Canvas x SVG</h2>
+      <p>
+        O Canvas é indicado para desenhos e gráficos que precisam ser
+        atualizados rapidamente, como jogos, animações e aplicações
+        interativas. Já o SVG é mais adequado para gráficos vetoriais,
+        ícones, diagramas e elementos que precisam manter a qualidade
+        mesmo quando são redimensionados. O Canvas trabalha com pixels,
+        enquanto o SVG trabalha com formas e elementos vetoriais.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por Isabela de Sena Alves</p>
+    <p>Mogi das Cruzes, SP — 2026</p>
+  </footer>
+
+  
+
+  <script src="js/scripts.js" defer></script>
+
+</body>
+</html>
